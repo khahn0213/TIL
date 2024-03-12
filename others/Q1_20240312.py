@@ -66,7 +66,7 @@ def check_bracket(input_str):
     
 if __name__=="__main__":
     s = '(((())))'
-    s = '([{}])'
+    s = '([[][{}[{()[]}][]]])'
     print(check_right_pair(s))
 
     
