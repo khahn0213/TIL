@@ -13,15 +13,22 @@ def check_right_pair(input_str):
     for i, b in enumerate(input_str):
         if b == '(' or b == '{' or b == '[':
             stack_list.append(b)
+            continue
         if b == ')':
             if len(stack_list) == 0 or stack_list[-1] != '(':
                 return 'NO'
+            else:
+                stack_list.pop()
         if b == '}':
             if len(stack_list) == 0 or stack_list[-1] != '{':
                 return 'NO'
+            else:
+                stack_list.pop()
         if b == ']':
             if len(stack_list) == 0 or stack_list[-1] != '[':
                 return 'NO'
+            else:
+                stack_list.pop()
     return 'YES'
 
 
@@ -59,7 +66,7 @@ def check_bracket(input_str):
     
 if __name__=="__main__":
     s = '(((())))'
-    s = '([\{\}])'
+    s = '([{}])'
     print(check_right_pair(s))
 
     
